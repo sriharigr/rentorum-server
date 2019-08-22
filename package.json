@@ -1,0 +1,17 @@
+{
+  "name": "rentorum-server",
+  "version": "1.0.0",
+  "description": "Rentorum is an application of Rentomojo where Users can post comments about the things that they have rented or would like to rent on its platform.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Srihari Goutham G R",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  }
+}
