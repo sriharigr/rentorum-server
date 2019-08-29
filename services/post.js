@@ -34,7 +34,6 @@ module.exports.save = (object) => {
 module.exports.getComments = (postId) => {
     return new Promise((resolve, reject) => {
         try {
-            console.log('The Post Id is ', postId);
             var populate = {
                 path: 'comments',
                 model: 'comment'
@@ -66,7 +65,6 @@ module.exports.getComments = (postId) => {
 module.exports.addComment = (postId, commentId) => {
     return new Promise((resolve, reject) => {
         try {
-            console.log('The Comment Id is ', commentId);
             var updateQuery = {
                 $push: {
                     comments: commentId
@@ -98,7 +96,6 @@ module.exports.addComment = (postId, commentId) => {
 module.exports.getMany = (query, sortBy) => {
     return new Promise((resolve, reject) => {
         try {
-            console.log('Inside post service get()');
             sortBy = { lastUpdatedDateAndTime: -1 };
             dao.getMany(query, sortBy).then((response) => {
                 resolve({
@@ -114,7 +111,6 @@ module.exports.getMany = (query, sortBy) => {
                 });
             })
         } catch (error) {
-            console.log('Inside post service get() try catch error ', JSON.stringify(error));
             reject({
                 data: {},
                 description: error.message ? error.message : 'Failed to Fetch Posts',
@@ -134,7 +130,6 @@ module.exports.getOne = (query) => {
                     model: 'reply'
                 }
             };
-            console.log('in get one')
             dao.get(query, populate).then((response) => {
                 resolve({
                     data: response,
@@ -149,7 +144,6 @@ module.exports.getOne = (query) => {
                 });
             })
         } catch (error) {
-            console.log('Inside post service get() try catch error ', JSON.stringify(error));
             reject({
                 data: {},
                 description: error.message ? error.message : 'Failed to Fetch Posts',

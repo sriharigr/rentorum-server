@@ -63,7 +63,6 @@ module.exports = (router) => {
                     });
                 });
             } catch (error) {
-                console.log("Try - Catch Error ", JSON.stringify(error));
                 res.status(500).send({
                     description: "Something went wrong - Server Error",
                     status: "500"
@@ -74,7 +73,6 @@ module.exports = (router) => {
         .post((req, res) => {
             var createdBy = req.header('X-USER');
             try {
-                console.log('Inside API Route of POST');
                 let body = _.pick(req.body, postUpdAttributes);
                 body.createdBy = createdBy;
                 commentService.save(body).then((cmtSvResp) => {
@@ -99,7 +97,6 @@ module.exports = (router) => {
                     });
                 });
             } catch (error) {
-                console.log("Try - Catch Error ", JSON.stringify(error));
                 res.status(500).send({
                     description: "Something went wrong - Server Error",
                     status: "500"
@@ -124,7 +121,6 @@ module.exports = (router) => {
                     });
                 });
             } catch (error) {
-                console.log("Try - Catch Error ", JSON.stringify(error));
                 res.status(500).send({
                     description: "Something went wrong - Server Error",
                     status: "500"
@@ -135,7 +131,6 @@ module.exports = (router) => {
         .post((req, res) => {
             var createdBy = req.header('X-USER');
             try {
-                console.log('Inside API Route of REPLY');
                 let body = _.pick(req.body, commentUpdAttributes);
                 body.createdBy = createdBy;
                 replyService.save(body).then((rplSrvResp) => {
@@ -146,7 +141,6 @@ module.exports = (router) => {
                             data: rplSrvResp.data
                         });
                     }).catch((error) => {
-                        console.log("ERRROR ", JSON.stringify(error));
                         res.status(400).send({
                             status: "400",
                             description: 'Failed to save Reply',
@@ -161,7 +155,6 @@ module.exports = (router) => {
                     });
                 });
             } catch (error) {
-                console.log("Try - Catch Error ", JSON.stringify(error));
                 res.status(500).send({
                     description: "Something went wrong - Server Error",
                     status: "500"

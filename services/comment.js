@@ -38,14 +38,12 @@ module.exports.addReply = (commentId, replyId) => {
                 }
             };
             dao.update(commentId, updateQuery).then((response) => {
-                console.log('Comment Updated Successfully');
                 resolve({
                     data: {},
                     description: 'Comment Updated Successfully',
                     status: 200
                 });
             }).catch((error) => {
-                console.log("ERRROR ", JSON.stringify(error));
                 reject({
                     data: {},
                     description: error.description ? error.description : 'Failed to Save',

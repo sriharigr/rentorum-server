@@ -29,7 +29,6 @@ module.exports = (router) => {
             // }
         }
         catch (error) {
-            console.log(error);
             response.status(500).send({
                 description: "Something went wrong - Server Error",
                 status: "500"

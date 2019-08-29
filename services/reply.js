@@ -4,7 +4,6 @@ const dao = require("../dao/reply");
 module.exports.save = (object) => {
     return new Promise((resolve, reject) => {
         try {
-            console.log('Inside SERVICE of REPLY');
             dao.save(object).then((response) => {
                 resolve({
                     data: {

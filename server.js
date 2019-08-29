@@ -21,7 +21,6 @@ var app = express();
 var router = express.Router();
 
 app.use(function(req, res, next) {
-    console.log(req.header('X-USER'), 'Is it me?', req.method);
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Request-Headers", "*");
     res.header('Access-Control-Allow-Methods', 'GET, POST,PUT, DELETE, OPTIONS');
